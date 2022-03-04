@@ -10,8 +10,27 @@ public class Cart {
 
     private List<Item> items = new ArrayList<>();
 
+    public Item getItem(String productId) {
+        for (Item item : items) {
+            if (item.getProduct().getId().equals(productId)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public boolean addItem(Item item) {
         return items.add(item);
+    }
+
+    public boolean removeItem(String productId) {
+        for (Item item : items) {
+            if (item.getProduct().getId().equals(productId)) {
+                items.remove(item);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

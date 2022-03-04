@@ -42,6 +42,7 @@ public class PosInMemoryDB implements PosDB {
     private PosInMemoryDB() {
         this.products.add(new Product("PD1", "iPhone 13", 8999));
         this.products.add(new Product("PD2", "MacBook Pro", 29499));
+        this.saveCart(new Cart());
     }
 
 }
